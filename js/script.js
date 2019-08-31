@@ -14,13 +14,13 @@ const config = {
   classNameOfCardWinnerRotated: 'card__winner_rotated',
   classNameOfRandomWinnerCard: 'card card__winner',
   idNameOfMenu: 'nav',
+  idNameOfTextEasy: 'checked__easy',
+  idNameOfTextMedium: 'checked__medium',
+  idNameOfTextHard: 'checked__hard',
   idNameOfMain: 'main',
   idNameOfButtonStartGame: 'start-game',
-  idNameOfTextEasy: 'text__easy',
-  idNameOfTextMedium: 'text__medium',
-  idNameOfTextHard: 'text__hard',
-  diff: 'diff',
-  cardWin: 'card-win',
+  tagNameOfDiff: 'diff',
+  idOfcardWin: 'card-win',
 }
 
 let numberOfCard;
@@ -28,19 +28,32 @@ let cards = [];
 const button = document.getElementById(config.idNameOfButtonStartGame);
 
 const getDifficultyOfGame = () => {
-  const diff = document.getElementsByName(config.diff);
+  const diff = document.getElementsByName(config.tagNameOfDiff);
+  const easyChecked = document.getElementById(config.idNameOfTextEasy);
+  const mediumChecked = document.getElementById(config.idNameOfTextMedium);
+  const hardChecked = document.getElementById(config.idNameOfTextHard);
+
   if (diff[0].checked) {
+  	 easyChecked.classList.add('checked');
+  	 mediumChecked.classList.remove('checked');
+  	 hardChecked.classList.remove('checked');
     return (numberOfCard = 3);
   } else if (diff[1].checked) {
+  	 easyChecked.classList.remove('checked');
+  	 mediumChecked.classList.add('checked');
+  	 hardChecked.classList.remove('checked');
     return (numberOfCard = 6);
   } else if (diff[2].checked) {
+  	 easyChecked.classList.remove('checked');
+  	 mediumChecked.classList.remove('checked');
+  	 hardChecked.classList.add('checked');
     return (numberOfCard = 10);
   } else {
     return (numberOfCard = 3);
+    easyChecked.classList.add('checked');
   }
 }
 getDifficultyOfGame();
-
 
 const createAndShowCards = () => {
   getDifficultyOfGame();
@@ -76,7 +89,7 @@ const startGameAndDecideWinnerAndLoosers = () => {
     })
   })
       
-  const win = document.getElementById(config.cardWin);
+  const win = document.getElementById(config.idOfcardWin);
   const clickOnWinnerCard = () => {
       if (win.className !== config.classNameOfCardWinnerRotated) {
         win.className = config.classNameOfCardWinnerRotated;

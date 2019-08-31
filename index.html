@@ -16,15 +16,15 @@
       <form name="form" class="difficulty">
         <label class="label" for="label__easy">
           <input class="radio label__easy" id="label__easy" type="radio" name="diff" value="easy" onchange="getDifficultyOfGame()" checked>
-          <p class="label__text_easy">    Простой</p>
+          <p class="label__text_easy" id='checked__easy'>    Простой</p>
         </label>
         <label class="label" for="label__medium">
           <input class="radio label__medium" id="label__medium" type="radio" name="diff" value="medium" onchange="getDifficultyOfGame()">
-          <p class="label__text_medium">    Средний</p>
+          <p class="label__text_medium" id='checked__medium'>    Средний</p>
         </label>
         <label class="label" for="label__hard">
           <input class="radio label__hard" id="label__hard" type="radio" name="diff" value="hard" onchange="getDifficultyOfGame()">
-          <p class="label__text_hard">    Сложный</p>
+          <p class="label__text_hard" id='checked__hard'>    Сложный</p>
         </label>
         <input class="difficulty__start-game" type="button" value="Начать игру" id="start-game">
       </form>

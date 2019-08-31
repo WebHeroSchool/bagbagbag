@@ -5,7 +5,7 @@
   min-height: 950px;
   max-width: 1300px;
   background-image: url(../image/background.png);
-  font-family: 'Roboto', sans-serif;
+  font-family: Roboto, sans-serif;
   color: #ffff;
 }
 
@@ -14,10 +14,8 @@
   padding: 0;
   min-height: 750px;
   width: 1300px;
-  background-image: url(../image/card__first.png), url(../image/card__second.png);
-  background-repeat: no-repeat;
-  background-position: bottom 0px left 900px,
-                       bottom 0px left 750px;
+  background: url(../image/card__first.png) bottom 0 left 900px / 393px 411px no-repeat,
+              url(../image/card__second.png) bottom 0 left 750px / 288px 383px no-repeat;
 }
 
 .nav__title {
@@ -59,9 +57,7 @@
   opacity: .8;
 }
 
-.radio:checked + .label__text_easy,
-.radio:checked + .label__text_medium,
-.radio:checked + .label__text_hard {
+.checked {
   top: 0;
   left: 25px;
   height: 59px;
@@ -177,8 +173,6 @@
   align-items: center;
 }
 
-/*Adaptive*/
-
 @media (max-width: 1366px) {
   .body {
     min-height: 660px;
@@ -189,9 +183,8 @@
   .nav {
     min-height: 660px;
     max-height: 660px;
-    background-size: 334px 349px, 244px 325px;
-    background-position: bottom 50px left 770px,
-                         bottom 50px left 643px;
+    background: url(../image/card__first.png) bottom 50px left 770px / 334px 349px no-repeat,
+                url(../image/card__second.png) bottom 50px left 643px / 244px 325px no-repeat;
   }
 
   .nav__title {
@@ -214,7 +207,7 @@
     background-position: 5px;
   }
 
-  .radio:checked + .text {
+  .checked {
     height: 55px;
     background-position: 5px;
 }
@@ -282,9 +275,8 @@
   .nav {
     min-height: 550px;
     max-height: 550px;
-    background-size: 255px 267px, 187px 248px;
-    background-position: bottom 50px left 550px,
-                         bottom 50px left 454px;
+    background: url(../image/card__first.png) bottom 50px left 550px / 255px 267px no-repeat,
+                url(../image/card__second.png) bottom 50px left 454px / 187px 248px no-repeat;
   }
 
   .nav__title {
@@ -306,7 +298,7 @@
     height: 44px;
   }
 
-  .radio:checked + .text {
+  .checked {
     height: 44px;
 }
 
@@ -362,7 +354,6 @@
   .nav {
     min-height: 450px;
     max-height: 450px;
-    background-size: 255px 267px, 187px 248px;
     background-position: bottom 20px left 550px,
                          bottom 20px left 454px;
   }
@@ -386,7 +377,7 @@
     height: 35px;
   }
 
-  .radio:checked + .text {
+  .checked {
     height: 35px;
 }
 
@@ -442,9 +433,8 @@
   .nav {
     min-height: 450px;
     max-height: 450px;
-    background-size: 229px 240px, 168px 223px;
-    background-position: bottom 60px left 420px,
-                         bottom 60px left 334px;
+    background: url(../image/card__first.png) bottom 60px left 420px / 229px 240px no-repeat,
+                url(../image/card__second.png) bottom 60px left 334px / 168px 223px no-repeat;
   }
 
   .nav__title {
@@ -465,7 +455,7 @@
     height: 33px;
   }
 
-  .radio:checked + .text {
+  .checked {
     height: 33px;
 }
 
@@ -515,15 +505,14 @@
    .body {
     min-height: 370px;
     max-height: 370px;
-    max-width: 575px;
+    max-width: 500px;
   }
 
   .nav {
     min-height: 370px;
     max-height: 370px;
-    background-size: 183px 192px, 134px 178px;
-    background-position: bottom 60px left 320px,
-                         bottom 60px left 234px;
+    background: url(../image/card__first.png) bottom 60px left 320px / 183px 192px no-repeat,
+                url(../image/card__second.png) bottom 60px left 234px / 134px 178px no-repeat;
   }
 
   .nav__title {
@@ -545,7 +534,7 @@
     background-size: 17px 17px;
   }
 
-  .radio:checked + .text {
+  .checked {
     height: 27px;
     background-size: 17px 17px;
   }
@@ -593,53 +582,6 @@
   }
 }
 
-@media (max-width: 670px) {
-  .body {
-   min-height: 370px;
-   max-height: 370px;
-   max-width: 500px;
-  }
-
-  .nav {
-    min-height: 370px;
-    max-height: 370px;
-    background-image: none;
-  }
-
-  .nav__title {
-    font-size: 24px;
-  }
-
-  .nav__subtitle {
-    margin-bottom: 24px;
-    font-size: 16px;
-  }
-
-  .label {
-    font-size: 24px;
-  }
-
-  .label__text_easy,
-  .label__text_medium {
-    height: 24px;
-  }
-
-  .label__text_hard {
-    margin: 0 0 20px 0;
-    height: 24px;
-  }
-
-  .label__text_easy:hover,
-  .label__text_medium:hover,
-  .label__text_hard:hover {
-    height: 24px;
-  }
-
-  .radio:checked + .text {
-    height: 24px;
- }
-}
-
 @media (max-width: 500px) {
   .body {
     min-height: 370px;
@@ -650,6 +592,7 @@
   .nav {
     min-height: 370px;
     max-height: 370px;
+    background-image: none;
   }
 
   .nav__title {
@@ -663,6 +606,12 @@
 
   .label {
     font-size: 24px;
+  }
+
+  .label__text_easy:hover,
+  .label__text_medium:hover,
+  .label__text_hard:hover {
+    height: 24px;
   }
 
   .label__text_easy,
@@ -705,5 +654,11 @@
   .main-for-ten-cards {
     height: 250px;
     width: 350px;
+  }
+}
+
+@media (max-width: 350px) {
+  .body {
+    max-width: 300px;
   }
 }
