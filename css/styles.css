@@ -46,7 +46,9 @@
   display: none;
 }
 
-.text:hover {
+.label__text_easy:hover,
+.label__text_medium:hover,
+.label__text_hard:hover {
   top: 0;
   left: 25px;
   height: 59px;
@@ -54,9 +56,12 @@
   background: url(../image/rectangle.png) no-repeat;
   background-position: 5px;
   cursor: pointer;
+  opacity: .8;
 }
 
-.radio:checked + .text {
+.radio:checked + .label__text_easy,
+.radio:checked + .label__text_medium,
+.radio:checked + .label__text_hard {
   top: 0;
   left: 25px;
   height: 59px;
@@ -84,6 +89,7 @@
   font-size: 32px;
   color: #ffff;
   cursor: pointer;
+  outline: none;
 }
 
 .card {
@@ -201,7 +207,9 @@
     font-size: 45px;
   }
 
-  .text:hover {
+  .label__text_easy:hover,
+  .label__text_medium:hover,
+  .label__text_hard:hover {
     height: 55px;
     background-position: 5px;
   }
@@ -292,7 +300,9 @@
     font-size: 40px;
   }
   
-  .text:hover {
+  .label__text_easy:hover,
+  .label__text_medium:hover,
+  .label__text_hard:hover {
     height: 44px;
   }
 
@@ -370,7 +380,9 @@
     font-size: 35px;
   }
   
-  .text:hover {
+  .label__text_easy:hover,
+  .label__text_medium:hover,
+  .label__text_hard:hover {
     height: 35px;
   }
 
@@ -447,7 +459,9 @@
     font-size: 33px;
   }
   
-  .text:hover {
+  .label__text_easy:hover,
+  .label__text_medium:hover,
+  .label__text_hard:hover {
     height: 33px;
   }
 
@@ -524,7 +538,9 @@
     font-size: 27px;
   }
 
-  .text:hover {
+  .label__text_easy:hover,
+  .label__text_medium:hover,
+  .label__text_hard:hover {
    	height: 27px;
     background-size: 17px 17px;
   }
@@ -613,7 +629,9 @@
     height: 24px;
   }
 
-  .text:hover {
+  .label__text_easy:hover,
+  .label__text_medium:hover,
+  .label__text_hard:hover {
     height: 24px;
   }
 

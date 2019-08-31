@@ -16,16 +16,18 @@ const config = {
   idNameOfMenu: 'nav',
   idNameOfMain: 'main',
   idNameOfButtonStartGame: 'start-game',
+  idNameOfTextEasy: 'text__easy',
+  idNameOfTextMedium: 'text__medium',
+  idNameOfTextHard: 'text__hard',
   diff: 'diff',
   cardWin: 'card-win',
 }
-
 
 let numberOfCard;
 let cards = [];
 const button = document.getElementById(config.idNameOfButtonStartGame);
 
-function getDifficultyOfGame() {
+const getDifficultyOfGame = () => {
   const diff = document.getElementsByName(config.diff);
   if (diff[0].checked) {
     return (numberOfCard = 3);
@@ -37,25 +39,22 @@ function getDifficultyOfGame() {
     return (numberOfCard = 3);
   }
 }
+getDifficultyOfGame();
 
-const createCardsAndshowCards = () => {
+
+const createAndShowCards = () => {
   getDifficultyOfGame();
   createMainInHtml();
   const main = document.getElementById(config.idNameOfMain);
-
-  if (numberOfCard == 3) {
-    createCards(3);
-    addFrontAndBackSidesToCards();
-    main.className = config.classNameOfMainForThreeCards;
-  } else if (numberOfCard == 6) {
-    createCards(6);
-    addFrontAndBackSidesToCards();
-    main.className = config.classNameOfMainForSixCards;
-  } else {
-    createCards(10);
-    addFrontAndBackSidesToCards();
-    main.className = config.classNameOfMainForTenCards;
+  const keysOfCardClasses = {
+  	 3: config.classNameOfMainForThreeCards,
+    6: config.classNameOfMainForSixCards,
+    10: config.classNameOfMainForTenCards
   }
+  
+  createCards(numberOfCard);
+  addFrontAndBackSidesToCards();
+  main.className = keysOfCardClasses[numberOfCard];
 }
 
 
@@ -63,44 +62,31 @@ const startGameAndDecideWinnerAndLoosers = () => {
   const menu = document.getElementById(config.idNameOfMenu);
   menu.className = config.classNameOfMenuBeforeStart;
   const body = document.body;
-  createCardsAndshowCards();
+  createAndShowCards();
   decideRandomOfWinner();
   
-  let numberOfClickToCard = 0;
   const losers = document.querySelectorAll(`.${config.classNameOfLuserCards}`);
   losers.forEach((elem) => {
     elem.addEventListener('click', () => {
-      while (true) {
-        if (numberOfClickToCard % 2 == 0) {
+        if (elem.className !== config.classNameOfCardLooserRotated) {
           elem.className = config.classNameOfCardLooserRotated;
-          numberOfClickToCard += 1;
-          break;
-        } else if (numberOfClickToCard % 2 == 1) {
+        } else {
           location.reload(true);
-          numberOfClickToCard += 1;
-          break;
-        }
       } 
     })
   })
       
   const win = document.getElementById(config.cardWin);
   const clickOnWinnerCard = () => {
-    while (true) {
-      if (numberOfClickToCard % 2 == 0) {
+      if (win.className !== config.classNameOfCardWinnerRotated) {
         win.className = config.classNameOfCardWinnerRotated;
-        numberOfClickToCard += 1;
-        break;
-       } else if (numberOfClickToCard % 2 == 1) {
+       } else {
          location.reload(true);
-         numberOfClickToCard += 1;
-         break;
        }
      }
-  }
   win.addEventListener('click', clickOnWinnerCard);
 }
-button.addEventListener('click', startGameAndDecideWinnerAndLoosers);
+button.addEventListener('click', startGameAndDecideWinnerAndLoosers, {once: true});
 
 const createMainInHtml = () => {
   const main = document.createElement('main');
