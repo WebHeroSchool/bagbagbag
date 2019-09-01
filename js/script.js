@@ -34,19 +34,19 @@ const getDifficultyOfGame = () => {
   const hardChecked = document.getElementById(config.idNameOfTextHard);
 
   if (diff[0].checked) {
-  	 easyChecked.classList.add('checked');
-  	 mediumChecked.classList.remove('checked');
-  	 hardChecked.classList.remove('checked');
+    easyChecked.classList.add('checked');
+    mediumChecked.classList.remove('checked');
+    hardChecked.classList.remove('checked');
     return (numberOfCard = 3);
   } else if (diff[1].checked) {
-  	 easyChecked.classList.remove('checked');
-  	 mediumChecked.classList.add('checked');
-  	 hardChecked.classList.remove('checked');
+    easyChecked.classList.remove('checked');
+    mediumChecked.classList.add('checked');
+    hardChecked.classList.remove('checked');
     return (numberOfCard = 6);
   } else if (diff[2].checked) {
-  	 easyChecked.classList.remove('checked');
-  	 mediumChecked.classList.remove('checked');
-  	 hardChecked.classList.add('checked');
+    easyChecked.classList.remove('checked');
+    mediumChecked.classList.remove('checked');
+    hardChecked.classList.add('checked');
     return (numberOfCard = 10);
   } else {
     return (numberOfCard = 3);
@@ -60,7 +60,7 @@ const createAndShowCards = () => {
   createMainInHtml();
   const main = document.getElementById(config.idNameOfMain);
   const keysOfCardClasses = {
-  	 3: config.classNameOfMainForThreeCards,
+    3: config.classNameOfMainForThreeCards,
     6: config.classNameOfMainForSixCards,
     10: config.classNameOfMainForTenCards
   }
