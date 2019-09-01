@@ -95,6 +95,7 @@ const startGameAndDecideWinnerAndLoosers = () => {
   const clickOnWinnerCard = () => {
       if (win.className !== config.classNameOfCardWinnerRotated && numberOfClick == 0) {
         win.className = config.classNameOfCardWinnerRotated;
+        numberOfClick++;
        } else {
          location.reload(true);
        }
