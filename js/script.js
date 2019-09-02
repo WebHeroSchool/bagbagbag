@@ -21,7 +21,7 @@ const config = {
   idNameOfButtonStartGame: 'start-game',
   tagNameOfDiff: 'diff',
   idOfcardWin: 'card-win',
-}
+};
 
 let numberOfCard;
 let cards = [];
@@ -52,7 +52,7 @@ const getDifficultyOfGame = () => {
     return (numberOfCard = 3);
     easyChecked.classList.add('checked');
   }
-}
+};
 getDifficultyOfGame();
 
 const createAndShowCards = () => {
@@ -63,12 +63,12 @@ const createAndShowCards = () => {
     3: config.classNameOfMainForThreeCards,
     6: config.classNameOfMainForSixCards,
     10: config.classNameOfMainForTenCards
-  }
+  };
   
   createCards(numberOfCard);
   addFrontAndBackSidesToCards();
   main.className = keysOfCardClasses[numberOfCard];
-}
+};
 
 
 const startGameAndDecideWinnerAndLoosers = () => {
@@ -88,8 +88,8 @@ const startGameAndDecideWinnerAndLoosers = () => {
         } else {
           location.reload(true);
       } 
-    })
-  })
+    });
+  });
       
   const win = document.getElementById(config.idOfcardWin);
   const clickOnWinnerCard = () => {
@@ -99,39 +99,40 @@ const startGameAndDecideWinnerAndLoosers = () => {
        } else {
          location.reload(true);
        }
-     }
+     };
   win.addEventListener('click', clickOnWinnerCard);
-}
+};
 button.addEventListener('click', startGameAndDecideWinnerAndLoosers, {once: true});
 
 const createMainInHtml = () => {
   const main = document.createElement('main');
   main.setAttribute('id', 'main');
   document.body.append(main);
-}
+};
 
 const createCards = (number) => {
   for (let i = 0; i < number; i++) {
     const card = document.createElement('div');
     card.className = config.classNameOfCards;
     document.body>main.append(card);
-  }
-}
+  };
+};
 
 const addFrontAndBackSidesToCards = () => {
+	 const cardss = document.querySelectorAll('.card');
   let numberOfEachCardInTurn = 0;
   Array.from(document.querySelectorAll(`.${config.classNameOfAllCards}`)).forEach(el => {
     cards.push(el);
     const cardFront = document.createElement('div');
     cardFront.className = config.classNameOfFrontSideForCard;
-    document.body>main>cards[numberOfEachCardInTurn].append(cardFront);
+    cards[numberOfEachCardInTurn].append(cardFront);
 
     const cardBack = document.createElement('div');
     cardBack.className = config.classNameOfBackSideForCard;
-    document.body>main>cards[numberOfEachCardInTurn].append(cardBack);
+    cards[numberOfEachCardInTurn].append(cardBack);
     numberOfEachCardInTurn++;
   });
-}
+};
 
 const decideRandomOfWinner = () => {
   const randomNumberOfCard = cards[Math.floor(Math.random() * (numberOfCard))];
@@ -139,4 +140,4 @@ const decideRandomOfWinner = () => {
   a.className = config.classNameOfWinnerBack;
   randomNumberOfCard.setAttribute('id', 'card-win');
   randomNumberOfCard.className = config.classNameOfRandomWinnerCard;
-}
+};
