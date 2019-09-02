@@ -88,7 +88,7 @@ const startGameAndDecideWinnerAndLoosers = () => {
         } else {
           location.reload(true);
       } 
-    });
+    })
   });
       
   const win = document.getElementById(config.idOfcardWin);
@@ -99,7 +99,7 @@ const startGameAndDecideWinnerAndLoosers = () => {
        } else {
          location.reload(true);
        }
-     };
+     }
   win.addEventListener('click', clickOnWinnerCard);
 };
 button.addEventListener('click', startGameAndDecideWinnerAndLoosers, {once: true});
