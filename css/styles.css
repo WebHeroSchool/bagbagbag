@@ -137,9 +137,6 @@
 }
 
 .card__looser_back {
-  position: absolute;
-  height: 341px;
-  width: 218px;
   background-image: url(../image/game-over.png);
   transform: rotateY(180deg);
 }
