@@ -107,7 +107,6 @@
   transform-style: preserve-3d;
   cursor: pointer;
   transform: rotateY(180deg);
-  backface-visibility: hidden;
 }
 
 .card:hover {
