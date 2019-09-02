@@ -119,7 +119,6 @@ const createCards = (number) => {
 }
 
 const addFrontAndBackSidesToCards = () => {
-	 const cardss = document.querySelectorAll('.card');
   let numberOfEachCardInTurn = 0;
   Array.from(document.querySelectorAll(`.${config.classNameOfAllCards}`)).forEach(el => {
     cards.push(el);

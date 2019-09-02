@@ -92,8 +92,10 @@
   height: 341px;
   width: 218px;
   background-image: url(../image/card.png);
+  background-repeat: no-repeat;
   transition: transform .5s;
   transition-timing-function: linear;
+  transform-style: preserve-3d;
   cursor: pointer;
 }
 
@@ -102,6 +104,7 @@
   height: 341px;
   width: 218px;
   background-image: url(../image/card.png);
+  background-repeat: no-repeat;
   transition: transform .8s;
   transition-timing-function: linear;
   transform-style: preserve-3d;
