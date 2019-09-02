@@ -97,7 +97,7 @@
   cursor: pointer;
 }
 
-.card__looser_rotated,
+/*.card__looser_rotated,
 .card__winner_rotated {
   height: 341px;
   width: 218px;
@@ -106,7 +106,24 @@
   transform-style: preserve-3d;
   cursor: pointer;
   transform: rotateY(180deg);
+}*/
+
+.card__looser_rotated,
+.card__winner_rotated {
+  height: 341px;
+  width: 218px;
+  transition: transform 1.8s;
+  transform-style: preserve-3d;
+  transform: rotateY(180deg);
 }
+
+.card__front {
+	 height: 341px;
+  width: 218px;
+  background-image: url(../image/card.png);
+}
+
+
 
 .card:hover {
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
