@@ -91,22 +91,10 @@
 .card {
   height: 341px;
   width: 218px;
-  background-image: url(../image/card.png);
   transition: transform 1s;
   transform-style: preserve-3d;
   cursor: pointer;
 }
-
-/*.card__looser_rotated,
-.card__winner_rotated {
-  height: 341px;
-  width: 218px;
-  background-image: url(../image/card.png);
-  transition: transform 1.8s;
-  transform-style: preserve-3d;
-  cursor: pointer;
-  transform: rotateY(180deg);
-}*/
 
 .card__looser_rotated,
 .card__winner_rotated {
@@ -118,12 +106,10 @@
 }
 
 .card__front {
-	 height: 341px;
+  height: 341px;
   width: 218px;
   background-image: url(../image/card.png);
 }
-
-
 
 .card:hover {
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
@@ -142,16 +128,19 @@
 
 .card__back {
   transform: rotateY(180deg);
+  cursor: pointer;
 }
 
 .card__winner_back {
   background-image: url(../image/bag.png);
   transform: rotateY(180deg);
+  cursor: pointer;
 }
 
 .card__looser_back {
   background-image: url(../image/game-over.png);
   transform: rotateY(180deg);
+  cursor: pointer;
 }
 
 .main-for-three-cards {
