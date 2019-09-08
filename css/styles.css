@@ -86,6 +86,11 @@
   color: #ffff;
   cursor: pointer;
   outline: none;
+  border: none;
+}
+
+.difficulty__start-game:hover {
+  opacity: .9;
 }
 
 .card {
