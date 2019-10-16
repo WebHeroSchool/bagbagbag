@@ -19,13 +19,13 @@ const config = {
   idNameOfTextHard: 'checked__hard',
   idNameOfMain: 'main',
   idNameOfButtonStartGame: 'start-game',
-  tagNameOfDiff: 'diff',
+  tagNameOfDiff: 'diffe',
   idOfcardWin: 'card-win',
 };
 
 let cards = [];
 const button = document.getElementById(config.idNameOfButtonStartGame);
-const numberOfCard = getDifficultyOfGame();
+let numberOfCard = getDifficultyOfGame();
 
 function getDifficultyOfGame() {
   const diff = document.getElementsByName(config.tagNameOfDiff);
@@ -49,14 +49,12 @@ function getDifficultyOfGame() {
     hardChecked.classList.add('checked');
     return 10;
   } else {
-    return 3;
     easyChecked.classList.add('checked');
+    return 3;
   };
 };
-getDifficultyOfGame();
 
 const createAndShowCards = () => {
-  getDifficultyOfGame();
   createMainInHtml();
   const main = document.getElementById(config.idNameOfMain);
   const keysOfCardClasses = {
